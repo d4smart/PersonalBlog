@@ -141,8 +141,8 @@ class Dispatcher {
             if(is_file(MODULE_PATH.'Conf/alias.php'))
                 Think::addMap(include MODULE_PATH.'Conf/alias.php');
             // 加载模块函数文件
-            if(is_file(MODULE_PATH.'Public/function.php'))
-                include MODULE_PATH.'Public/function.php';
+            if(is_file(MODULE_PATH.'Common/function.php'))
+                include MODULE_PATH.'Common/function.php';
         }else{
             E(L('_MODULE_NOT_EXIST_').':'.MODULE_NAME);
         }
