@@ -13,8 +13,7 @@ use Think\Controller;
 
 class LinkController extends Controller
 {
-    public function lst()
-    {
+    public function lst() {
         $link = D('link');
         $count = $link->count();
         $page = new \Think\Page($count, 10);
@@ -26,8 +25,7 @@ class LinkController extends Controller
         $this->display();
     }
 
-    public function add()
-    {
+    public function add() {
         $link = D('link');
 
         if (IS_POST) {
@@ -50,8 +48,7 @@ class LinkController extends Controller
         $this->display();
     }
 
-    public function edit()
-    {
+    public function edit() {
         $link = D('link');
 
         if (IS_POST) {
@@ -77,8 +74,7 @@ class LinkController extends Controller
         $this->display();
     }
 
-    public function del()
-    {
+    public function del() {
         $link = D('link');
 
         if ($link->delete(I('id'))) {
@@ -88,8 +84,7 @@ class LinkController extends Controller
         }
     }
 
-    public function sort()
-    {
+    public function sort() {
         $link = D('link');
 
         foreach ($_POST as $id => $sort) {
@@ -98,3 +93,4 @@ class LinkController extends Controller
         $this->success('排序修改成功！', U('lst'));
     }
 }
+// 1loO0I00000oooOOOOOOllllIIIIiiilLi

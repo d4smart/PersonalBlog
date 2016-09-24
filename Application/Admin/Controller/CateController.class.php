@@ -13,8 +13,7 @@ use Think\Controller;
 
 class CateController extends Controller
 {
-	public function lst()
-    {
+	public function lst() {
 		$cate = D('cate');
 		$cates = $cate->order('sort asc')->select();
 		$this->assign('cates', $cates);
@@ -22,8 +21,7 @@ class CateController extends Controller
 		$this->display();
 	}
 
-	public function add()
-	{
+	public function add() {
 		$cate = D('cate');
 
 		if (IS_POST) {
@@ -44,8 +42,7 @@ class CateController extends Controller
 		$this->display();
 	}
 
-	public function edit()
-	{
+	public function edit() {
 		$cate = D('cate');
 
 		if (IS_POST) {
@@ -68,8 +65,7 @@ class CateController extends Controller
 		$this->display();
 	}
 
-	public function del()
-	{
+	public function del() {
 		$cate = D('cate');
 
 		if ($cate->delete(I('id'))) {
@@ -79,8 +75,7 @@ class CateController extends Controller
 		}
 	}
 
-	public function sort()
-	{
+	public function sort() {
 		$cate = D('cate');
 
 		foreach ($_POST as $id => $sort) {
