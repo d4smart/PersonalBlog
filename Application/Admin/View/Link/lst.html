@@ -17,7 +17,7 @@
     <div class="main-wrap">
 
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="/jscss/admin">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">栏目管理</span></div>
+            <div class="crumb-list"><i class="icon-font"></i><a href="/jscss/admin">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">链接管理</span></div>
         </div>
         <div class="search-wrap">
             <div class="search-content">
@@ -26,7 +26,7 @@
                         <tr>
                             <th width="120">选择分类:</th>
                             <td>
-                                <select name="search-sort" id="">
+                                <select name="search-sort" id="haha">
                                     <option value="">全部</option>
                                     <option value="19">精品界面</option><option value="20">推荐界面</option>
                                 </select>
@@ -43,35 +43,39 @@
             <form name="myform" id="myform" action="__CONTROLLER__/sort" method="post">
                 <div class="result-title">
                     <div class="result-list">
-                        <a href="__CONTROLLER__/add"><i class="icon-font"></i>新增栏目</a>
+                        <a href="__CONTROLLER__/add"><i class="icon-font"></i>新增链接</a>
                         <input class="btn btn-primary btn2" type="submit" value="更新排序" />
                     </div>
                 </div>
                 <div class="result-content">
                     <table class="result-tab" width="100%">
                         <tr>
-                            <th>排序</th>
-                            <th>ID</th>
-                            <th>栏目名称</th>
+                            <th>链接排序</th>
+                            <th>链接ID</th>
+                            <th>链接标题</th>
+                            <th>链接地址</th>
+                            <th>链接描述</th>
                             <th>操作</th>
                         </tr>
 
-                        <volist name="cates" id="cate">
+                        <volist name="links" id="link">
                             <tr>
                                 <td width="4%">
-                                    <input class="common-input sort-input" name="{$cate.id}" value="{$cate.sort}" type="text">
+                                    <input class="common-input sort-input" name="{$link.id}" value="{$link.sort}" type="text">
                                 </td>
-                                <td width="4%">{$cate.id}</td>
-                                <td title="{$cate.catename}"><a target="_blank" href="#" title="{$cate.catename}"> {$cate.catename} </a></td>
+                                <td width="4%">{$link.id}</td>
+                                <td title="{$link.title}"> {$link.title} </a></td>
+                                <td title="{$link.url}"><a target="_blank" href="{$link.url}" title="{$link.url}"> {$link.url} </a></td>
+                                <td> {$link.desp} </td>
                                 <td width="10%">
-                                    <a class="link-update" href="__CONTROLLER__/edit/id/{$cate.id}">修改</a>
-                                    <a class="link-del" onclick="return confirm('你确定要删除这个栏目吗？');" href="__CONTROLLER__/del/id/{$cate.id}">删除</a>
+                                    <a class="link-update" href="__CONTROLLER__/edit/id/{$link.id}">修改</a>
+                                    <a class="link-del" onclick="return confirm('你确定要删除这个链接吗？');" href="__CONTROLLER__/del/id/{$link.id}">删除</a>
                                 </td>
                             </tr>
                         </volist>
 
                     </table>
-                    <div class="list-page"></div>
+                    <div class="list-page"> {$page} </div>
                 </div>
             </form>
         </div>
