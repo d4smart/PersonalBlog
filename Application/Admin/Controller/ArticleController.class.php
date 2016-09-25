@@ -10,16 +10,15 @@
 
 namespace Admin\Controller;
 use Think\Controller;
-use Think\Crypt\Driver\Think;
 
 class ArticleController extends Controller
 {
     public function lst() {
-        $article = D('article');
+        $article = D('ArticleView');
         $count = $article->count();
         $page = new \Think\Page($count, 10);
         $show = $page->show();
-        $articles = $article->order('sort')->limit($page->firstRow.','.$page->listRows)->select();
+        $articles = $article->order('id')->limit($page->firstRow.','.$page->listRows)->select();
         $this->assign('articles', $articles);
         $this->assign('page', $show);
 
@@ -39,7 +38,7 @@ class ArticleController extends Controller
                 $upload = new \Think\Upload();
                 $upload->maxSize = 2048000;
                 $upload->exts = array('jpg', 'gif', 'png', 'png', 'jpeg');
-                $upload->savePath = './Public/Uploads/';
+                $upload->savePath = '/Public/Uploads/';
                 $upload->rootPath = './';
 
                 $info = $upload->uploadOne($_FILES['pic']);

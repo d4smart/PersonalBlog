@@ -58,13 +58,19 @@
                             <th width="10%">操作</th>
                         </tr>
 
-                        <volist name="links" id="link">
+                        <volist name="articles" id="article">
                             <tr>
-                                <td>{$link.id}</td>
-                                <td title="{$link.title}"> {$link.title} </a></td>
-                                <td> {$link.desp} </td>
-                                <td title="{$link.url}"><a target="_blank" href="{$link.url}" title="{$link.url}"> {$link.url} </a></td>
-                                <td title="{$link.url}"><a target="_blank" href="{$link.url}" title="{$link.url}"> {$link.url} </a></td>
+                                <td>{$article.id}</td>
+                                <td title="{$article.title}"> {$article.title} </a></td>
+                                <td> {$article.desp} </td>
+                                <td>
+                                    <if condition="$article['pic'] neq ''">
+                                        <img src="__ROOT__{$article.pic}" height="60">
+                                    <else />
+                                        暂无缩略图
+                                    </if>
+                                </td>
+                                <td>{$article.catename}</td>
                                 <td>
                                     <a class="link-update" href="__CONTROLLER__/edit/id/{$link.id}">修改</a>
                                     <a class="link-del" onclick="return confirm('你确定要删除这个文章吗？');" href="__CONTROLLER__/del/id/{$link.id}">删除</a>
