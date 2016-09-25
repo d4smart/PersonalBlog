@@ -10,6 +10,7 @@
 
 namespace Admin\Controller;
 use Think\Controller;
+use Think\Crypt\Driver\Think;
 
 class ArticleController extends Controller
 {
@@ -30,14 +31,30 @@ class ArticleController extends Controller
 
         if (IS_POST) {
             $data['title'] = I('title');
-            $data['url'] = I('url');
             $data['desp'] = I('desp');
+            $data['cateid'] = I('cateid');
+            $data['content'] = I('content');
+
+            if ($_FILES['pic']['tmp_name'] != '') {
+                $upload = new \Think\Upload();
+                $upload->maxSize = 2048000;
+                $upload->exts = array('jpg', 'gif', 'png', 'png', 'jpeg');
+                $upload->savePath = './Public/Uploads/';
+                $upload->rootPath = './';
+
+                $info = $upload->uploadOne($_FILES['pic']);
+                if (!$info) {
+                    $this->error($upload->getError());
+                } else {
+                    $data['pic'] = $info['savepath'].$info['savename'];
+                }
+            }
 
             if ($article->create($data)) {
                 if ($article->add()) {
-                    $this->success('添加链接成功！', U('lst'));
+                    $this->success('添加文章成功！', U('lst'));
                 } else {
-                    $this->error('添加链接失败！');
+                    $this->error('添加文章失败！');
                 }
             } else {
                 $this->error($article->getError());
@@ -45,6 +62,8 @@ class ArticleController extends Controller
             return;
         }
 
+        $cates = D('cate')->order('sort')->select();
+        $this->assign('cates', $cates);
         $this->display();
     }
 
@@ -59,9 +78,9 @@ class ArticleController extends Controller
 
             if ($article->create($data)) {
                 if ($article->save()) {
-                    $this->success('修改链接成功！', U('lst'));
+                    $this->success('修改文章成功！', U('lst'));
                 } else {
-                    $this->error('修改链接失败或未作修改！');
+                    $this->error('修改文章失败或未作修改！');
                 }
             } else {
                 $this->error($article->getError());
@@ -78,9 +97,9 @@ class ArticleController extends Controller
         $article = D('article');
 
         if ($article->delete(I('id'))) {
-            $this->success('删除链接成功！', U('lst'));
+            $this->success('删除文章成功！', U('lst'));
         } else {
-            $this->error('删除链接失败！');
+            $this->error('删除文章失败！');
         }
     }
 

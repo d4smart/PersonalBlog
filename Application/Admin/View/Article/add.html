@@ -24,7 +24,7 @@
         </div>
         <div class="result-wrap">
             <div class="result-content">
-                <form action="" method="post" id="myform" name="myform">
+                <form action="" method="post" id="myform" name="myform" enctype="multipart/form-data"><!-- 添加附件必须 -->
                     <table class="insert-tab" width="100%">
                         <tbody>
                             <tr>
@@ -42,14 +42,16 @@
                             <tr>
                                 <th>缩略图：</th>
                                 <td>
-                                    <input id="title" name="title" size="50" value="" type="file">
+                                    <input id="pic" name="pic" size="50" value="" type="file">
                                 </td>
                             </tr>
                             <tr>
                                 <th><i class="require-red">*</i>所属栏目：</th>
                                 <td>
-                                    <select>
-                                        <option>请选择文章所属分类：</option>
+                                    <select name="cateid">
+                                        <volist name="cates" id="cate">
+                                            <option value="{$cate.id}">{$cate.catename}</option>
+                                        </volist>
                                     </select>
                                 </td>
                             </tr>
