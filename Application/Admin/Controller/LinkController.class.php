@@ -1,6 +1,6 @@
 <?php
 /**
- * Desp:
+ * Desp: 友情链接的控制器
  * User: d4smart
  * Date: 2016/9/24
  * Time: 8:46

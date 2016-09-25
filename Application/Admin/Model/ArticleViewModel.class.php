@@ -1,6 +1,6 @@
 <?php
 /**
- * Desp:
+ * Desp: 视图模型，连接文章和分类
  * User: d4smart
  * Date: 2016/9/24
  * Time: 8:47

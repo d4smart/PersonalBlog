@@ -1,6 +1,6 @@
 <?php
 /**
- * Desp:
+ * Desp: 文章的验证规则
  * User: d4smart
  * Date: 2016/9/24
  * Time: 8:47
