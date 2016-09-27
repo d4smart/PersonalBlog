@@ -33,6 +33,7 @@ class ArticleController extends Controller
             $data['desp'] = I('desp');
             $data['cateid'] = I('cateid');
             $data['content'] = I('content');
+            $data['time'] = time();
 
             if ($_FILES['pic']['tmp_name'] != '') {
                 $upload = new \Think\Upload();
