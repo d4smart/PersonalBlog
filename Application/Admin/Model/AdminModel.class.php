@@ -16,9 +16,10 @@ class AdminModel extends Model
     protected $_validate = array(
         array('username', 'require', '管理员名称不得为空！', 1, 'regex', 3),
         array('password', 'require', '密码不得为空！', 1, 'regex', 1),
+        array('username', '', '管理员名称已存在！', 1, 'unique', 1),
         array('username', '', '管理员名称已存在！', 1, 'unique', 2),
-        array('username', 'require', '管理员名称不得为空！', 1, 'regex', 4),
-        array('password', 'require', '密码不得为空！', 1, 'regex', 4),
+
+        array('password', 'require', '未填写密码！', 1, 'regex', 4),
     );
 
     public function login() {

@@ -17,11 +17,11 @@ class LoginController extends Controller
         $admin = D('admin');
 
         if (IS_POST) {
-            if ($admin->create($_POST,4)) {
+            if ($admin->create($_POST, 4)) {
                 if ($admin->login()) {
                     $this->success('登陆成功，跳转中...', U('Index/index'));
                 } else {
-                    $this->error('你的用户名或密码错误！');
+                    $this->error('您的用户名或密码错误！');
                 }
             } else {
                 $this->error($admin->getError());
