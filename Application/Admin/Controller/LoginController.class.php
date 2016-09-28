@@ -29,6 +29,19 @@ class LoginController extends Controller
             return;
         }
 
-        $this->display('login');
+        if (session('id')) {
+            $this->error('您已经登录该系统，请勿重复登陆！', U('Index/index'));
+        } else {
+            $this->display('login');
+        }
     }
+
+    public function verify() {
+        $verify = new \Think\Verify();
+        $verify->fontSize = 30;
+        $verify->length = 4;
+        $verify->useNoise = true;
+        $verify->entry();
+    }
+
 }

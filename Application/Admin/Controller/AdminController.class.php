@@ -11,7 +11,7 @@ namespace Admin\Controller;
 
 use Think\Controller;
 
-class AdminController extends Controller
+class AdminController extends CommonController
 {
 	public function lst() {
         $admin = D('admin');
@@ -91,5 +91,10 @@ class AdminController extends Controller
         }
 
 	}
+
+	public function logout() {
+	    session(null);
+        $this->success('退出成功，跳转中...', U('Login/index'));
+    }
 
 }

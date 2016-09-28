@@ -20,6 +20,7 @@ class AdminModel extends Model
         array('username', '', '管理员名称已存在！', 1, 'unique', 2),
 
         array('password', 'require', '未填写密码！', 1, 'regex', 4),
+        array('verify', 'check_verify', '验证码不正确！', 1, 'callback', 4),
     );
 
     public function login() {
@@ -29,7 +30,7 @@ class AdminModel extends Model
         if ($info) {
             if ($info['password'] == md5($password)) {
                 session('id', $info['id']);
-                session('username', $info['password']);
+                session('username', $info['username']);
                 return true;
             } else {
                 return false;
@@ -37,5 +38,10 @@ class AdminModel extends Model
         } else {
             return false;
         }
+    }
+
+    public function check_verify($code, $id='') {
+        $verify = new \Think\Verify();
+        return $verify->check($code, $id);
     }
 }
