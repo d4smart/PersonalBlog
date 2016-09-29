@@ -11,9 +11,15 @@
 namespace Home\Controller;
 use Think\Controller;
 
-class CateController extends Controller
+class CateController extends CommonController
 {
     public function index() {
+        $this->current();
         $this->display();
+    }
+
+    public function current() {
+        $current = I('id');
+        $this->assign('current', $current);
     }
 }
