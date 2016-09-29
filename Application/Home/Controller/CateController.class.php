@@ -14,6 +14,14 @@ use Think\Controller;
 class CateController extends CommonController
 {
     public function index() {
+        $articles = D('article');
+        $count = $articles->where(array('cateid'=>I('id')))->count();
+        $page = new \Think\Page($count, 10);
+        $show = $page->show();
+        $list = $articles->where(array('cateid'=>I('id')))->order('time desc')->limit($page->firstRow.','.$page->listRows)->select();
+        $this->assign('page', $show);
+        $this->assign('list', $list);
+
         $this->current();
         $this->display();
     }
