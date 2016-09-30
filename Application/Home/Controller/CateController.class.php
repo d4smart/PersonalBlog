@@ -1,6 +1,6 @@
 <?php
 /**
- * Desp:
+ * Desp: 前台分类控制器
  * User: d4smart
  * Date: 2016/9/29
  * Time: 12:28
