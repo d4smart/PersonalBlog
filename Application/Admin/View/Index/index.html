@@ -14,20 +14,16 @@
     <!--/sidebar-->
 
     <div class="main-wrap">
-        <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font">&#xe06b;</i><span>欢迎收看童老师ThinkPHP视频教程第三季度<span><a target="_blank" style="color:#f00; margin:0 20px;" href="http://www.chuanke.com/s2260700.html">点此查看视频教程</a></span></span></div>
-        </div>
         <div class="result-wrap">
             <div class="result-title">
                 <h1>快捷操作</h1>
             </div>
             <div class="result-content">
                 <div class="short-wrap">
-                    <a href="#"><i class="icon-font">&#xe001;</i>新增作品</a>
-                    <a href="#"><i class="icon-font">&#xe005;</i>新增博文</a>
-                    <a href="#"><i class="icon-font">&#xe048;</i>新增作品分类</a>
-                    <a href="#"><i class="icon-font">&#xe041;</i>新增博客分类</a>
-                    <a href="#"><i class="icon-font">&#xe01e;</i>作品评论</a>
+                    <a href="__MODULE__/Article/add"><i class="icon-font">&#xe001;</i>新增文章</a>
+                    <a href="__MODULE__/Cate/add"><i class="icon-font">&#xe048;</i>新增分类</a>
+                    <a href="__MODULE__/Link/add"><i class="icon-font">&#xe041;</i>新增友情链接</a>
+                    <a href="__MODULE__/Admin/add"><i class="icon-font">&#xe01e;</i>新增管理员</a>
                 </div>
             </div>
         </div>
@@ -38,28 +34,22 @@
             <div class="result-content">
                 <ul class="sys-info-list">
                     <li>
-                        <label class="res-lab">操作系统</label><span class="res-info">WINNT</span>
+                        <label class="res-lab">操作系统</label><span class="res-info"><?php echo php_uname(); ?></span>
                     </li>
                     <li>
-                        <label class="res-lab">运行环境</label><span class="res-info">Apache/2.2.21 (Win64) PHP/5.3.10</span>
+                        <label class="res-lab">运行环境</label><span class="res-info"><?php echo $_SERVER['SERVER_SOFTWARE']; ?></span>
                     </li>
                     <li>
-                        <label class="res-lab">PHP运行方式</label><span class="res-info">apache2handler</span>
+                        <label class="res-lab">PHP运行方式</label><span class="res-info"><?php echo php_sapi_name(); ?></span>
                     </li>
                     <li>
-                        <label class="res-lab">静静设计-版本</label><span class="res-info">v-0.1</span>
+                        <label class="res-lab">根目录</label><span class="res-info"><?php echo $_SERVER['CONTEXT_DOCUMENT_ROOT']; ?></span>
                     </li>
                     <li>
-                        <label class="res-lab">上传附件限制</label><span class="res-info">2M</span>
+                        <label class="res-lab">服务器域名/IP</label><span class="res-info"><?php echo $_SERVER['SERVER_NAME']; ?></span>
                     </li>
                     <li>
-                        <label class="res-lab">北京时间</label><span class="res-info">2014年3月18日 21:08:24</span>
-                    </li>
-                    <li>
-                        <label class="res-lab">服务器域名/IP</label><span class="res-info">localhost [ 127.0.0.1 ]</span>
-                    </li>
-                    <li>
-                        <label class="res-lab">Host</label><span class="res-info">127.0.0.1</span>
+                        <label class="res-lab">北京时间</label><span class="res-info"><?php echo date("Y-m-d h:i:s");?></span>
                     </li>
                 </ul>
             </div>
@@ -71,7 +61,7 @@
             <div class="result-content">
                 <ul class="sys-info-list">
                     <li>
-                        <label class="res-lab">ThinkPHP交流群：</label><span class="res-info">484519446</span>
+                        <label class="res-lab">人生忠告：</label><span class="res-info">闷声发大财</span>
                     </li>
                     
                 </ul>

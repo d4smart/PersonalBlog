@@ -7,8 +7,8 @@
  * Email:   d4smart@foxmail.com
  * Github:  https://github.com/d4smart
  */
-namespace Admin\Controller;
 
+namespace Admin\Controller;
 use Think\Controller;
 
 class CateController extends CommonController

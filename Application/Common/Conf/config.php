@@ -1,6 +1,7 @@
 <?php
 return array(
 	//'配置项'=>'配置值'
+    'URL_MODEL' => 2,       // rewrite模式，去掉URL中的index.php
 
     // 数据库连接信息
     'DB_TYPE' => 'mysql',   // 数据库类型
