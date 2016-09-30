@@ -97,14 +97,23 @@
 
         <div>
             <strong>上一篇：</strong>
-            <a class="prev-post icon-right" href="http://yispace.net/42797.html">
-                那些越想炫耀自己的人，往往生活过得越糟糕</a>
+            <if condition="$pre">
+                <a class="prev-post icon-right" href="__MODULE__/Article/index/id/{$pre.id}">
+                    {$pre.title}</a>
+            <else />
+                没有了
+            </if>
         </div>
 
         <div style="margin:10px 0;">
             <strong>下一篇：</strong>
-            <a class="next-post" href="javascript:alert('你正在看的文章已经是最新的了...');">
-                木有啦</a>
+            <if condition="$next">
+                <a class="next-post" href="__MODULE__/Article/index/id/{$next.id}">
+                    {$next.title}</a>
+            <else />
+                没有了
+            </if>
+
         </div>
 
         <!-- 分享代码 -->
