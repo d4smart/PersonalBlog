@@ -437,7 +437,7 @@ input.btn,button.btn {
 }
 .mypages li {
 	float:left;
-	margin-bottom:8px;
+	margin-bottom:12px;
 	position:relative
 }
 .my-a {
@@ -533,6 +533,9 @@ input.btn,button.btn {
 .mypages-dropdown a:hover {
 	background-color:#eee;
 	color:#222
+}
+.widget {
+	margin-bottom: 40px;
 }
 .widget {
 	margin-bottom: 40px;
