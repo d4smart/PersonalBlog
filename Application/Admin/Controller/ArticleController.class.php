@@ -18,7 +18,7 @@ class ArticleController extends CommonController
         $count = $article->count();
         $page = new \Think\Page($count, 10);
         $show = $page->show();
-        $articles = $article->order('id')->limit($page->firstRow.','.$page->listRows)->select();
+        $articles = $article->order('time desc')->limit($page->firstRow.','.$page->listRows)->select();
         $this->assign('articles', $articles);
         $this->assign('page', $show);
 

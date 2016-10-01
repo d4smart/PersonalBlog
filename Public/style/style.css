@@ -61,16 +61,16 @@ a:hover {
 	position:relative;
 	margin-top:12px;
 	background-color:#FFF;
-	width:988px;
+	width:1200px;
 	overflow:hidden;
 }
 .content {
 	float:left;
-	width:636px;
+	width:800px;
 	padding:14px;
 }
 .single .content,.page .content {
-	width:636px;
+	width:800px;
 	padding:12px 14px 14px;
 }
 .sidebar {
@@ -125,8 +125,9 @@ a:hover {
 .logo {
 	width:200px;
 	float:left;
-	background:url(../images/logo.png) no-repeat 0 0;
+	background:url(../images/logo1.png) no-repeat 0 0;
 	height:32px;
+	margin-top: 4px;
 	display:block;
 	overflow:hidden;
 	line-height:100px;
