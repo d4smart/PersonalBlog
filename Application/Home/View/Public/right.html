@@ -1,28 +1,37 @@
 <div class="sidebar">
-    <ul class="mypages">
-        <li>
-            <a rel="nofollow" target="_blank" class="my-a my-tqq"
-               href="http://t.qq.com/weibogo2010"><span><strong>腾讯微博</strong></span>腾讯微博</a>
-        </li>
-        <li>
-            <a rel="nofollow" target="_blank" class="my-a my-weibo"
-               href="http://weibo.com/534260789"><span><strong>新浪微博</strong></span>新浪微博</a>
-        </li>
-        <li>
-            <a rel="nofollow" target="_blank" class="my-a my-feed"
-               href="http://mail.qq.com/cgi-bin/bookcol?colid=20296"><span><strong>订阅本站</strong></span>订阅本站</a>
-        </li>
-        <li>
-            <a rel="nofollow" target="_blank" class="my-a my-theme"
-               href="http://172108624.qzone.qq.com"><span><strong>腾讯博客</strong></span>腾讯博客</a>
-        </li>
-    </ul>
+
+    <div class="widget">
+        <h3 class="widget-tit">关于我</h3>
+        <ul class="mypages">
+            <li>
+                <a rel="nofollow" target="_blank" class="my-a my-qq"
+                   href="http://user.qzone.qq.com/2303748137/main"><span><strong>QQ</strong></span>QQ</a>
+            </li>
+            <li>
+                <a rel="nofollow" target="_blank" class="my-a my-weixin"
+                   onclick="window.open('__PUBLIC__/images/weixin0573.png','','width=360,height=360');"><span><strong>微信</strong></span>微信</a>
+            </li>
+            <li>
+                <a rel="nofollow" target="_blank" class="my-a my-weibo"
+                   href="http://weibo.com/d4smart"><span><strong>微博</strong></span>微博</a>
+            </li>
+            <li>
+                <a rel="nofollow" target="_blank" class="my-a my-taobao"
+                   href="https://www.taobao.com/"><span><strong>淘宝</strong></span>淘宝</a>
+            </li>
+            <li>
+                <a rel="nofollow" class="my-a my-mail"
+                   href="mailto:d4smart@foxmail.com"><span><strong>邮箱</strong></span>邮箱</a>
+            </li>
+        </ul>
+    </div>
+
 
     <div class="widget widget_categories"><h3 class="widget-tit">文章分类</h3>
         <ul>
             <volist name="cates" id="cate">
                 <li class="cat-item cat-item-18">
-                    <a href="__MODULE__/Cate/index/id/{$cate.id}">{$cate.catename}</a>
+                    <a href="__MODULE__/Cate/index/id/{$cate.id}">&nbsp;{$cate.catename}&nbsp;</a>
                 </li>
             </volist>
 

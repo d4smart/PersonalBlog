@@ -433,7 +433,7 @@ input.btn,button.btn {
 }
 .mypages {
 	margin:12px -10% 3px 0;
-	height:68px;
+	height:100px;
 }
 .mypages li {
 	float:left;
@@ -441,34 +441,35 @@ input.btn,button.btn {
 	position:relative
 }
 .my-a {
-	width:144px;
-	height:24px;
+	width:84px;
+	height:32px;
 	display:inline-block;
 	position:relative;
 	border:1px solid #eee;
 	background-color:#FFF;
 	margin-right:8px;
-	line-height:24px;
+	line-height:32px;
 	color:#333
 }
 .my-a span {
-	width:24px;
-	height:24px;
+	width:32px;
+	height:32px;
 	background-color:#fbfbfb;
 	float:left;
 	border-right:1px solid #eee;
 	margin-right:10px;
 	opacity:.8;
 	filter:alpha(opacity=80);
+	font-size: 16px;
 }
 .my-a strong {
-	width:16px;
-	height:16px;
+	width:24px;
+	height:24px;
 	line-height:99px;
 	overflow:hidden;
 	margin:4px;
 	float:left;
-	background:url(../images/share.png) no-repeat
+	background:url(../images/share1.png) no-repeat
 }
 .my-a em {
 	display:inline-block;
@@ -481,17 +482,23 @@ input.btn,button.btn {
 	border-right:4px solid transparent;
 	border-top:4px solid #bbb
 }
-.my-tqq strong {
-	background-position:0 -48px
+.my-qq strong {
+	background-position:0 -98px
 }
 .my-weibo strong {
-	background-position:0 -16px
+	background-position:0 -0px
 }
-.my-feed strong {
-	background-position:0 -144px
+.my-weixin strong {
+	background-position:0 -33px;
 }
-.my-theme strong {
-	background-position:0 -176px
+.my-qzone strong {
+	background-position:0 -65px;
+}
+.my-taobao strong {
+	background-position:0 -196px;
+}
+.my-mail strong {
+	background-position:0 -548px;
 }
 .mypages li:hover .my-a span {
 	opacity:1;
@@ -526,6 +533,9 @@ input.btn,button.btn {
 .mypages-dropdown a:hover {
 	background-color:#eee;
 	color:#222
+}
+.widget {
+	margin-bottom: 40px;
 }
 .widget ul {
 	margin:-5px 0 12px;
@@ -572,9 +582,9 @@ input.btn,button.btn {
 	height:28px;
 	overflow:hidden;
 	margin-bottom:5px;
-	margin-right:6px;
+	margin-right:8px;
 	float:left;
-	width:96px;
+	width:84px;
 	color:#999;
 	line-height:26px;
 }
@@ -697,7 +707,7 @@ input.btn,button.btn {
 }
 /* ------------ paging ------------ */
 .paging,.pagenav {
-	float:right;
+	float: right;
 	padding-top:15px
 }
 .paging a,.paging .current,.pagenav a,.pagenav .current,.paging .dots,.pagenav .page-numbers {

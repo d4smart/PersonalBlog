@@ -7,9 +7,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="__PUBLIC__/style/style.css"/>
     <script src="__PUBLIC__/style/jquery.min.js"></script>
     <title>这是醉吼的</title>
-    <meta name="keywords" content="意空间,美文阅读,情感美文,励志生活,生活感悟"/>
-    <meta name="description"
-          content="意空间青春励志文章阅读网为读者奉献青春励志人生哲理文章故事阅读，励志的文章大全，青春励志语录名言，青春励志短文阅读，励志的故事欣赏阅读，提升思想意境，阅读改变思想。"/>
+    <meta name="keywords" content="易水人去，斯密特先生，d4smart,d4smarter"/>
 
     <!-- 跳出 -->
     <script type="text/javascript">
@@ -26,8 +24,30 @@
 <div class="wrapper">
 
     <div class="content">
+        <ul class="excerpt thumb">
+            <volist name="list" id="vo">
+                <li>
+                    <a href="__MODULE__/Article/index/id/{$vo.id}" class="pic">
+                        <img src="__ROOT__{$vo.pic}" alt="{$vo.title}"/></a>
+                    <h2 class="excerpt-tit">
+                        <a href="__MODULE__/Article/index/id/{$vo.id}">{$vo.title}</a>
+                    </h2>
+                    <p class="excerpt-desc">
+                        {$vo.desp}...
+                    </p>
+                    <div class="excerpt-time">
+                        {$vo.time|date="Y-m-d",###}
+                    </div>
+                </li>
+            </volist>
+        </ul>
+
+        <div class="paging">
+            {$page}
+        </div>
+
         <!-- 分享代码 -->
-        <div class="baidufenxiang" style="overflow:auto;margin-bottom:10px"><!-- Baidu Button BEGIN -->
+        <div class="baidufenxiang" style="overflow:auto;margin-top:60px"><!-- Baidu Button BEGIN -->
             <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
                 <a class="bds_bdhome"></a>
                 <a class="bds_renren"></a>
@@ -51,28 +71,6 @@
                 document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date() / 3600000)
             </script>
             <!-- Baidu Button END -->
-        </div>
-
-        <ul class="excerpt thumb">
-            <volist name="list" id="vo">
-                <li>
-                    <a href="__MODULE__/Article/index/id/{$vo.id}" class="pic">
-                        <img src="__ROOT__{$vo.pic}" alt="{$vo.title}"/></a>
-                    <h2 class="excerpt-tit">
-                        <a href="__MODULE__/Article/index/id/{$vo.id}">{$vo.title}</a>
-                    </h2>
-                    <p class="excerpt-desc">
-                        {$vo.desp}...
-                    </p>
-                    <div class="excerpt-time">
-                        {$vo.time|date="Y-m-d",###}
-                    </div>
-                </li>
-            </volist>
-        </ul>
-
-        <div class="paging">
-            {$page}
         </div>
     </div>
 
