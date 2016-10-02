@@ -72,8 +72,8 @@
                                 </td>
                                 <td>{$article.catename}</td>
                                 <td>
-                                    <a class="link-update" href="__CONTROLLER__/edit/id/{$article.id}">修改</a>
-                                    <a class="link-del" onclick="return confirm('你确定要删除这个文章吗？');" href="__CONTROLLER__/del/id/{$article.id}">删除</a>
+                                    <a class="link-update" href="__CONTROLLER__/edit/{$article.id}">修改</a>
+                                    <a class="link-del" onclick="return confirm('你确定要删除这个文章吗？');" href="__CONTROLLER__/del/{$article.id}">删除</a>
                                 </td>
                             </tr>
                         </volist>

@@ -68,8 +68,8 @@
                                 <td title="{$link.url}"><a target="_blank" href="{$link.url}" title="{$link.url}"> {$link.url} </a></td>
                                 <td> {$link.desp} </td>
                                 <td width="10%">
-                                    <a class="link-update" href="__CONTROLLER__/edit/id/{$link.id}">修改</a>
-                                    <a class="link-del" onclick="return confirm('你确定要删除这个链接吗？');" href="__CONTROLLER__/del/id/{$link.id}">删除</a>
+                                    <a class="link-update" href="__CONTROLLER__/edit/{$link.id}">修改</a>
+                                    <a class="link-del" onclick="return confirm('你确定要删除这个链接吗？');" href="__CONTROLLER__/del/{$link.id}">删除</a>
                                 </td>
                             </tr>
                         </volist>

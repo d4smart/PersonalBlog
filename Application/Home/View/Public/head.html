@@ -1,17 +1,17 @@
 <div class="topbar">
     <div class="inner">
-        <h1 class="logo"><a href="__APP__" title="蛤蛤">蛤蛤</a></h1>
+        <h1 class="logo"><a href="__APP__" title="蛤蛤！">蛤蛤！</a></h1>
         <ul class="nav">
             <volist name="cates" id="cate">
                 <li <if condition="$current eq $cate['id']">class="current-menu-item"</if> >
-                    <a href="__MODULE__/Cate/index/id/{$cate.id}">{$cate.catename}</a>
+                    <a href="__MODULE__/cate/{$cate.id}">{$cate.catename}</a>
                 </li>
             </volist>
         </ul>
 
         <ul class="nav topmenu">
-            <li><a href="__APP__/Admin/Login">管理员登陆</a></li>
-            <li><a href="__APP__">关于本站</a></li>
+            <li><a href="__APP__/Admin/login">用户登陆</a></li>
+            <li><a href="__APP__" onclick="window.open('__PUBLIC__/images/weixin.png','','width=360,height=360');">关于我</a></li>
         </ul>
     </div>
 </div>

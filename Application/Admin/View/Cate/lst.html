@@ -64,8 +64,8 @@
                                 <td width="4%">{$cate.id}</td>
                                 <td title="{$cate.catename}"><a target="_blank" href="#" title="{$cate.catename}"> {$cate.catename} </a></td>
                                 <td width="10%">
-                                    <a class="link-update" href="__CONTROLLER__/edit/id/{$cate.id}">修改</a>
-                                    <a class="link-del" onclick="return confirm('你确定要删除这个栏目吗？');" href="__CONTROLLER__/del/id/{$cate.id}">删除</a>
+                                    <a class="link-update" href="__CONTROLLER__/edit/{$cate.id}">修改</a>
+                                    <a class="link-del" onclick="return confirm('你确定要删除这个栏目吗？');" href="__CONTROLLER__/del/{$cate.id}">删除</a>
                                 </td>
                             </tr>
                         </volist>

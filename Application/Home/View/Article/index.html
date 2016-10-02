@@ -26,7 +26,7 @@
     <div class="content">
         <div class="meta">
             <h1 class="meta-tit">{$arts.title}</h1>
-            <p class="meta-info">发表于：<a href="__APP__">{$catename}</a> 发表日期：{$arts.time|date="Y-m-d",###}</p>
+            <p class="meta-info">发表于：<a href="__MODULE__/cate/{$arts.cateid}">{$catename}</a> 发表日期：{$arts.time|date="Y-m-d",###}</p>
         </div>
 
         <div class="entry">
@@ -44,7 +44,7 @@
         <div>
             <strong>上一篇：</strong>
             <if condition="$pre">
-                <a class="prev-post icon-right" href="__MODULE__/Article/index/id/{$pre.id}">
+                <a class="prev-post icon-right" href="__MODULE__/article/{$pre.id}">
                     {$pre.title}</a>
             <else/>
                 没有了
@@ -53,7 +53,7 @@
         <div>
             <strong>下一篇：</strong>
             <if condition="$next">
-                <a class="next-post" href="__MODULE__/Article/index/id/{$next.id}">
+                <a class="next-post" href="__MODULE__/article/{$next.id}">
                     {$next.title}</a>
             <else/>
                 没有了

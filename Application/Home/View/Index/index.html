@@ -27,10 +27,10 @@
         <ul class="excerpt thumb">
             <volist name="list" id="vo">
                 <li>
-                    <a href="__MODULE__/Article/index/id/{$vo.id}" class="pic">
+                    <a href="__MODULE__/article/{$vo.id}" class="pic">
                         <img src="__ROOT__{$vo.pic}" alt="{$vo.title}"/></a>
                     <h2 class="excerpt-tit">
-                        <a href="__MODULE__/Article/index/id/{$vo.id}">{$vo.title}</a>
+                        <a href="__MODULE__/article/{$vo.id}">{$vo.title}</a>
                     </h2>
                     <p class="excerpt-desc">
                         {$vo.desp}...

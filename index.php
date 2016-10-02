@@ -10,7 +10,7 @@ if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
 define('APP_DEBUG',True);
 
 //定义项目的URL地址
-define('SITE_URL', 'http://127.0.0.1/Blog');
+define('SITE_URL', 'http://127.0.0.1/Blog/');
 
 // 定义应用目录
 define('APP_PATH','./Application/');

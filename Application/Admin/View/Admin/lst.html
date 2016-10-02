@@ -40,10 +40,10 @@
             </div>
         </div>
         <div class="result-wrap">
-            <form name="myform" id="myform" action="__CONTROLLER__/sort" method="post">
+            <form name="myform" id="myform" method="post">
                 <div class="result-title">
                     <div class="result-list">
-                        <a href="__CONTROLLER__/add"><i class="icon-font"></i>新增管理员</a>
+                        <a href="__MODULE__/user/add"><i class="icon-font"></i>新增管理员</a>
                     </div>
                 </div>
                 <div class="result-content">
@@ -61,9 +61,9 @@
                                 <td title="{$admin.username}">{$admin.username}</td>
                                 <td>{$admin.password}</td>
                                 <td>
-                                    <a class="link-update" href="__CONTROLLER__/edit/id/{$admin.id}">修改</a>
+                                    <a class="link-update" href="__MODULE__/user/edit/{$admin.id}">修改</a>
                                     <if condition="$admin['id'] neq 1">
-                                        <a class="link-del" onclick="return confirm('你确定要删除这个管理员吗？');" href="__CONTROLLER__/del/id/{$admin.id}">删除</a>
+                                        <a class="link-del" onclick="return confirm('你确定要删除这个管理员吗？');" href="__MODULE__/user/del/{$admin.id}">删除</a>
                                     </if>
                                 </td>
                             </tr>

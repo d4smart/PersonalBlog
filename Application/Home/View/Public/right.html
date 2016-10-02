@@ -9,7 +9,7 @@
             </li>
             <li>
                 <a rel="nofollow" target="_blank" class="my-a my-weixin"
-                   onclick="window.open('__PUBLIC__/images/weixin0573.png','','width=360,height=360');"><span><strong>微信</strong></span>微信</a>
+                   onclick="window.open('__PUBLIC__/images/weixin.png','','width=360,height=360');"><span><strong>微信</strong></span>微信</a>
             </li>
             <li>
                 <a rel="nofollow" target="_blank" class="my-a my-weibo"
@@ -31,7 +31,7 @@
         <ul>
             <volist name="cates" id="cate">
                 <li class="cat-item cat-item-18">
-                    <a href="__MODULE__/Cate/index/id/{$cate.id}">&nbsp;{$cate.catename}&nbsp;</a>
+                    <a href="__MODULE__/cate/{$cate.id}">&nbsp;{$cate.catename}&nbsp;</a>
                 </li>
             </volist>
 
@@ -41,7 +41,7 @@
     <div class="widget widget_recent_entries"><h3 class="widget-tit">最新发表</h3>
         <volist name="articles" id="article">
             <ul>
-                <li><a href="__MODULE__/Article/index/id/{$article.id}">{$article.title}</a></li>
+                <li><a href="__MODULE__/article/{$article.id}">{$article.title}</a></li>
             </ul>
         </volist>
 
