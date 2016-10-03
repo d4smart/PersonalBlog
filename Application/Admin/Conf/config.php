@@ -5,6 +5,7 @@ return array(
         '__PUBLIC__' => SITE_URL.'/Application/Admin/Public',   // 更改默认的Public替换规则，在Admin模块下Public目录为模块下的Public目录
     ),
 
+    // 后台模块URL规则
     'URL_ROUTE_RULES'   =>  array(
         'article/edit/:id\d'    =>  'Article/edit',
         'article/del/:id\d'     =>  'Article/del',

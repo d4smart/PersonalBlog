@@ -13,6 +13,6 @@ return array(
     'DB_PREFIX' => 'bg_',   // 数据库表前缀
     'DB_CHARSET'=> 'utf8',  // 字符集
 
-    // 开启路由
+    // 开启URL路由
     'URL_ROUTER_ON'   => true,
 );

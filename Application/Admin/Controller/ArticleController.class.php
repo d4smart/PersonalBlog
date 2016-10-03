@@ -15,12 +15,27 @@ class ArticleController extends CommonController
 {
     public function lst() {
         $article = D('ArticleView');
-        $count = $article->count();
+
+        if (IS_POST) {
+            $count = $article->where(array('catename'=>I('catename')))->count();
+        } else {
+            $count = $article->count();
+        }
+
         $page = new \Think\Page($count, 10);
         $show = $page->show();
-        $articles = $article->order('time desc')->limit($page->firstRow.','.$page->listRows)->select();
+
+        if (IS_POST) {
+            $articles = $article->where(array('catename'=>I('catename')))->order('time desc')->limit($page->firstRow.','.$page->listRows)->select();
+        } else {
+            $articles = $article->order('time desc')->limit($page->firstRow.','.$page->listRows)->select();
+        }
+
         $this->assign('articles', $articles);
         $this->assign('page', $show);
+
+        $cates = D('cate')->order('sort')->select();
+        $this->assign('cates', $cates);
 
         $this->display();
     }
