@@ -17,10 +17,9 @@ class RegisterController extends Controller
         $admin = D('admin');
 
         if (IS_POST) {
-            $data['username'] = I('username');
-            $data['password'] = md5(I('password'));
+            if ($admin->create($_POST)) {
+                $admin->password = md5(I('password'));  // MD5加密
 
-            if ($admin->create($data)) {
                 if ($admin->add()) {
                     $this->success('注册成功，跳转中...', U('Login/index'));
                 } else {

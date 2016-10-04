@@ -27,7 +27,7 @@
 <body>
 <div class="error">
     <p class="face">_(:з」∠)_</p>
-    <img src="Public/images/404.png">
+    <img src=<?php echo SITE_URL."Public/images/404.png";?>>
     <h1><?php echo strip_tags($e['message']);?></h1>
     <div class="content">
         <?php if(isset($e['file'])) {?>
