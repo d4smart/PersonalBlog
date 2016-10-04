@@ -13,12 +13,12 @@ use Think\Controller;
 
 class ArticleController extends CommonController
 {
-    public function index() {
+    public function read() {
         $arts = D('article')->find(I('id'));
         $this->assign('arts', $arts);
         $this->catename($arts['cateid']);
         $this->other(I('id'));
-        $this->display();
+        $this->display('index');
     }
 
     public function catename($cateid) {

@@ -34,22 +34,22 @@
             <div class="result-content">
                 <ul class="sys-info-list">
                     <li>
-                        <label class="res-lab">操作系统</label><span class="res-info"><?php echo php_uname(); ?></span>
+                        <label class="res-lab">操作系统</label><span class="res-info"><php>echo php_uname();</php></span>
                     </li>
                     <li>
-                        <label class="res-lab">运行环境</label><span class="res-info"><?php echo $_SERVER['SERVER_SOFTWARE']; ?></span>
+                        <label class="res-lab">运行环境</label><span class="res-info"><php>echo $_SERVER['SERVER_SOFTWARE'];</php></span>
                     </li>
                     <li>
-                        <label class="res-lab">PHP运行方式</label><span class="res-info"><?php echo php_sapi_name(); ?></span>
+                        <label class="res-lab">PHP运行方式</label><span class="res-info"><php> echo php_sapi_name();</php></span>
                     </li>
                     <li>
-                        <label class="res-lab">根目录</label><span class="res-info"><?php echo $_SERVER['CONTEXT_DOCUMENT_ROOT']; ?></span>
+                        <label class="res-lab">根目录</label><span class="res-info"><php> echo $_SERVER['CONTEXT_DOCUMENT_ROOT'];</php></span>
                     </li>
                     <li>
-                        <label class="res-lab">服务器域名/IP</label><span class="res-info"><?php echo $_SERVER['SERVER_NAME']; ?></span>
+                        <label class="res-lab">服务器域名/IP</label><span class="res-info"><php> echo $_SERVER['SERVER_NAME'];</php></span>
                     </li>
                     <li>
-                        <label class="res-lab">北京时间</label><span class="res-info"><?php echo date("Y-m-d h:i:s");?></span>
+                        <label class="res-lab">北京时间</label><span class="res-info"><php> echo date("Y-m-d h:i:s")</php></span>
                     </li>
                 </ul>
             </div>

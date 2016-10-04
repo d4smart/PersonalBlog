@@ -13,7 +13,7 @@ use Think\Controller;
 
 class CateController extends CommonController
 {
-    public function index() {
+    public function read() {
         $articles = D('article');
         $count = $articles->where(array('cateid'=>I('id')))->count();
         $page = new \Think\Page($count, 10);
@@ -23,7 +23,7 @@ class CateController extends CommonController
         $this->assign('list', $list);
 
         $this->current();
-        $this->display();
+        $this->display('index');
     }
 
     public function current() {
