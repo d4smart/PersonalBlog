@@ -17,7 +17,7 @@ return array(
     'URL_ROUTER_ON'   => true,
 
     /* 跳转和错误页面模板 */
-    'TMPL_ACTION_ERROR'     =>  'Public/Tpl/error.tpl',        // 默认错误跳转对应的模板文件
-    'TMPL_ACTION_SUCCESS'   =>  'Public/Tpl/success.tpl',     // 默认成功跳转对应的模板文件
-    'TMPL_EXCEPTION_FILE'   =>  'Public/Tpl/exception.tpl',   // 异常页面的模板文件
+    'TMPL_ACTION_ERROR'     =>  'Public/Tpl/error.tpl',     // 默认错误跳转对应的模板文件
+    'TMPL_ACTION_SUCCESS'   =>  'Public/Tpl/success.tpl',   // 默认成功跳转对应的模板文件
+    'TMPL_EXCEPTION_FILE'   =>  'Public/Tpl/exception.tpl', // 异常页面的模板文件
 );
