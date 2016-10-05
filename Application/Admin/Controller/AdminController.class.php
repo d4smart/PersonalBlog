@@ -118,7 +118,7 @@ class AdminController extends CommonController
      */
 	public function logout() {
 	    session(null);
-        $this->success('退出成功，跳转中...', '/blog/');
+        $this->success('退出成功，跳转中...', '/Blog/');
     }
 
 }
