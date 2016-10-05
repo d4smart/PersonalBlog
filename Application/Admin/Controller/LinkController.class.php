@@ -1,6 +1,6 @@
 <?php
 /**
- * Desp: 友情链接的控制器
+ * Desp: 友情链接控制器
  * User: d4smart
  * Date: 2016/9/24
  * Time: 8:46
@@ -9,12 +9,16 @@
  */
 
 namespace Admin\Controller;
-use Think\Controller;
 
 class LinkController extends CommonController
 {
+    /**
+     * 友情链接列表页面
+     * 分页显示友情链接
+     */
     public function lst() {
         $link = D('link');
+
         $count = $link->count();
         $page = new \Think\Page($count, 10);
         $show = $page->show();
@@ -22,13 +26,18 @@ class LinkController extends CommonController
         $this->assign('links', $links);
         $this->assign('page', $show);
 
-        $this->display();
+        $this->display(); //渲染模板
     }
 
+    /**
+     * 友情链接添加页面
+     * 如果有post数据，就添加友情链接并跳转；否则显示友情链接添加页面
+     */
     public function add() {
         $link = D('link');
 
         if (IS_POST) {
+            // 获取友情连接数据
             $data['title'] = I('title');
             $data['url'] = I('url');
             $data['desp'] = I('desp');
@@ -45,13 +54,19 @@ class LinkController extends CommonController
             return;
         }
 
+        // 显示友链添加页面
         $this->display();
     }
 
+    /**
+     * 友情链接编辑页面
+     * 如果有post数据，就添加友链并跳转；否则显示友链编辑页面
+     */
     public function edit() {
         $link = D('link');
 
         if (IS_POST) {
+            // 获取友链数据
             $data['id'] = I('id');
             $data['title'] = I('title');
             $data['url'] = I('url');
@@ -68,12 +83,18 @@ class LinkController extends CommonController
             }
             return;
         }
+
+        // 显示友链编辑页面
         $cat = $link->find(I('id'));
         $this->assign('link', $cat);
 
         $this->display();
     }
 
+    /**
+     * 友情链接删除
+     * 根据传递的id删除友链并跳转
+     */
     public function del() {
         $link = D('link');
 
@@ -84,6 +105,10 @@ class LinkController extends CommonController
         }
     }
 
+    /**
+     * 友链排序更新页面
+     * 根据post的数据更新友链的排序
+     */
     public function sort() {
         $link = D('link');
 

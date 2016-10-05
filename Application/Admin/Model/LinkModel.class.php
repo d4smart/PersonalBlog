@@ -1,6 +1,6 @@
 <?php
 /**
- * Desp: 链接的验证规则
+ * Desp: 友情链接模型
  * User: d4smart
  * Date: 2016/9/24
  * Time: 8:47
@@ -13,6 +13,7 @@ use Think\Model;
 
 class LinkModel extends Model
 {
+    // 友情链接的验证规则
     protected $_validate = array(
         array('title', 'require', '链接名称不得为空！', 1, 'regex', 3),
         array('url', 'require', '链接地址不得为空！', 1, 'regex', 3),

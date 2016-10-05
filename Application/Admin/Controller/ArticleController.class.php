@@ -1,6 +1,6 @@
 <?php
 /**
- * Desp: 文章的控制器
+ * Desp: 文章控制器
  * User: d4smart
  * Date: 2016/9/24
  * Time: 8:46
@@ -9,47 +9,59 @@
  */
 
 namespace Admin\Controller;
-use Think\Controller;
 
 class ArticleController extends CommonController
 {
+    /**
+     * 文章列表页面
+     * 若有post数据，则显示相应分类的文章；否则显示全部文章
+     */
     public function lst() {
         $article = D('ArticleView');
 
         if (IS_POST) {
-            $count = $article->where(array('catename'=>I('catename')))->count();
+            $count = $article->where(array('catename'=>I('catename')))->count(); //相应分类的文章数量
         } else {
-            $count = $article->count();
+            $count = $article->count(); //全部文章数量
         }
 
         $page = new \Think\Page($count, 10);
         $show = $page->show();
 
         if (IS_POST) {
+            // 相应分类文章分页显示
             $articles = $article->where(array('catename'=>I('catename')))->order('time desc')->limit($page->firstRow.','.$page->listRows)->select();
         } else {
+            // 全部文章分页显示
             $articles = $article->order('time desc')->limit($page->firstRow.','.$page->listRows)->select();
         }
 
         $this->assign('articles', $articles);
         $this->assign('page', $show);
 
+        // 获取所有分类数据，并传递给模板
         $cates = D('cate')->order('sort')->select();
         $this->assign('cates', $cates);
 
         $this->display();
     }
 
+    /**
+     * 文章添加页面
+     * 如果有post的数据，则添加文章并作出响应跳转；否则显示文章添加页面
+     */
     public function add() {
         $article = D('article');
 
         if (IS_POST) {
+            // 获取文章数据
             $data['title'] = I('title');
             $data['desp'] = I('desp');
             $data['cateid'] = I('cateid');
             $data['content'] = I('content');
             $data['time'] = time();
 
+            // 保存缩略图
             if ($_FILES['pic']['tmp_name'] != '') {
                 $upload = new \Think\Upload();
                 $upload->maxSize = 2048000;
@@ -77,21 +89,28 @@ class ArticleController extends CommonController
             return;
         }
 
+        // 显示文章添加页面
         $cates = D('cate')->order('sort')->select();
         $this->assign('cates', $cates);
         $this->display();
     }
 
+    /**
+     * 文章编辑页面
+     * 如果有post数据，则更新文章并作出响应跳转；否则显示文章编辑页面
+     */
     public function edit() {
         $article = D('article');
 
         if (IS_POST) {
+            // 获取文章页面
             $data['id'] = I('id');
             $data['title'] = I('title');
             $data['desp'] = I('desp');
             $data['cateid'] = I('cateid');
             $data['content'] = I('content');
 
+            // 保存缩略图
             if ($_FILES['pic']['tmp_name'] != '') {
                 $upload = new \Think\Upload();
                 $upload->maxSize = 2048000;
@@ -119,6 +138,7 @@ class ArticleController extends CommonController
             return;
         }
 
+        // 显示文章编辑页面
         $cat = $article->find(I('id'));
         $this->assign('article', $cat);
         $cates = D('cate')->select();
@@ -127,6 +147,10 @@ class ArticleController extends CommonController
         $this->display();
     }
 
+    /**
+     * 文章删除
+     * 根据传递的id删除文章，并跳转
+     */
     public function del() {
         $article = D('article');
 

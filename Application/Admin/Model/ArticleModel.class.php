@@ -1,6 +1,6 @@
 <?php
 /**
- * Desp: 文章的验证规则
+ * Desp: 文章模型
  * User: d4smart
  * Date: 2016/9/24
  * Time: 8:47
@@ -13,6 +13,7 @@ use Think\Model;
 
 class ArticleModel extends Model
 {
+    // 文章的验证规则
     protected $_validate = array(
         array('title', 'require', '文章名称不得为空！', 1, 'regex', 3),
         array('cateid', 'require', '所属栏目不得为空！', 1, 'regex', 3),
