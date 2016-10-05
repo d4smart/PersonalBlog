@@ -8,5 +8,14 @@
 5. 自定义的错误提示页面
 
 使用方法
+1. 将代码clone到web根目录下
+2. 更改index.php中的SITE_URL属性
+3. 导入目录下的blog.sql到数据库中
+4. 更改公共配置文件config.php的数据库连接信息，连接刚才导入的数据库
+5. 如果服务器不支持pathinfo和rewrite模式则需要进行配置
 
 部署网址
+http://www.d4smarter.com/blog/
+
+联系我
+d4smart@foxmail.com
